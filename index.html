@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belmobile Flexbox</title>
+      <meta name="description" content="CSS only mobile first navigation">
+      <meta name="author" content="Ouarzazi Ahmed">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+      <link rel="stylesheet" href="style.css">
+    <!--  <script src="assets/js/_j.js"></script> -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+        <!--
+
+        Mobile FIRST
+        _______________________________
+        |                              |
+        |     1      2      4     X    |
+- - - - | - - - - - - - - - - - - - - -|- - - - -
+        |               3              |
+        |_____________________________ |
+
+
+        Large screen
+        _______________________________
+        |                              |
+        |     1                 2      |
+- - - - | - - - - - - - - - - - - - - -|- - - - -
+        |     3                 4      |
+        |_____________________________ |
+
+
+        -->
+
+
+
+<header class="header">
+  <div class="brand">
+      <h1 class="brand__title">Belmobile</h1>
+      <img class="brand__logo" src="assets/img/logo_c.png" alt="Belmobile brand logo | Spare parts and Repair tools">
+      <!-- Other stuff Logo -->
+  </div>
+
+  <nav class="settings">
+    <ul class="settings__menu">
+      <li class="settings__menu-item settings__menu-item--icon-connexion"><a class="settings__menu-link settings__menu-link--icon-connexion" href="#">Connexion</a></li>
+      <li class="settings__menu-item settings__menu-item--icon-flag"><a class="settings__menu-link settings__menu-link--icon-flag" href="#">Language</a></li>
+    </ul>
+  </nav>
+
+
+    <nav class="navigation">
+        <ul class="navigation__menu" data-parent-menu="home">
+          <li class="navigation__menu-item navigation__menu-item--selected"><a class="navigation__menu-link" href="#">Home</a></li>
+          <li class="navigation__menu-item navigation__menu-item--parent" id="product"><a class="navigation__menu-link navigation__menu-link--open" href="#">Nos Produits</a>
+            <ul class="navigation__menu--child" data-parent-menu="product" data-back-menu="home">
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Ecran LCD</a></li>
+              <li class="navigation__menu-item--child navigation__menu-item--parent" id="connector"><a class="navigation__menu-link--child navigation__menu-link--open" href="#">Connecteur Charge</a>
+                <ul class="navigation__menu--child" data-parent-menu="connector"  data-back-menu="product">
+                  <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPhone 4</a></li>
+                  <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPhone 5</a></li>
+                  <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPhone 6</a></li>
+                  <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPhone 7</a></li>
+                </ul>
+              </li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Boutons</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Connecteur Son</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Cameras</a></li>
+            </ul>
+          </li>
+          <li class="navigation__menu-item navigation__menu-item--parent" id="apple"><a class="navigation__menu-link--child navigation__menu-link--open" href="#">Apple</a>
+            <ul class="navigation__menu--child" data-parent-menu="apple" data-back-menu="home">
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPad 4</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPad 5</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPad 6</a></li>
+            </ul>
+          </li>
+          <li class="navigation__menu-item"><a class="navigation__menu-link" href="#">Samsung</a></li>
+          <li class="navigation__menu-item"><a class="navigation__menu-link" href="#">Outillages</a></li>
+          <li class="navigation__menu-item navigation__menu-item--parent" id="accessorie"><a class="navigation__menu-link navigation__menu-link--open" href="#">Nos Accessoires</a>
+            <ul class="navigation__menu--child" data-parent-menu="accessorie"  data-back-menu="home">
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Coque Housse</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Protection Ecran</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Support Automobile</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Casques Oreillettes</a></li>
+              <li class="navigation__menu-item--child  navigation__menu-item--parent" id="powerbank"><a class="navigation__menu-link--child navigation__menu-link--open" href="#">Powerbank</a>
+                <ul class="navigation__menu--child" data-parent-menu="powerbank"  data-back-menu="accessories">
+                  <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">PW A 4</a></li>
+                  <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">PW A 5</a></li>
+                  <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">PW A 6</a></li>
+                  <li class="navigation__menu-item--child navigation__menu-item--parent" id="pwa7"><a class="navigation__menu-link--child  navigation__menu-link--open" href="#">PW A 7</a>
+                    <ul class="navigation__menu--child" data-parent-menu="pwa7" data-back-menu="powerbank">
+                      <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPad 4</a></li>
+                      <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPad 5</a></li>
+                      <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">iPad 6</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Cables</a></li>
+              <li class="navigation__menu-item--child"><a class="navigation__menu-link--child" href="#">Chargeurs Adaptateurs</a></li>
+            </ul>
+          </li>
+          <li class="navigation__menu-item"><a class="navigation__menu-link" href="#">Réparation</a></li>
+          <li class="navigation__menu-item"><a class="navigation__menu-link" href="#">Business</a></li>
+        </ul>
+  </nav>
+
+  <div class="cart">
+      <ul class="cart__info">
+        <li class="cart__info-item">
+          <a href="#" class="cart__link cart__link--icon-cart">
+            <span class="cart__title">Cart</span>
+            <span class="cart__item-amount">3</span>
+            <span class="cart__total-price">$145.99</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+
+<!--
+  <div class="search-box">
+      <form class="search-box__form">
+        <input class="search-box__field" placeholder="Je recherche ..." name="_nkw" type="text">
+        <input name="_sid" value="1242222620" type="hidden">
+        <input class="search-box__submit" value="Go" type="submit">
+      </form>
+  </div>
+-->
+
+
+
+
+  <div class="toogle-nav">
+    <a href="#" class="toogle-nav__menu">Menu</a>
+  </div>
+
+</header>
+
+
+<div class="test-content" style="height:1020px;margin-top:50px;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+
+</div>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+  <script>
+
+  jQuery(document).ready(function(){
+
+    if ( $(window).width() < 739) {
+        /* Definition des evenements*/
+
+        // Si on clique sur un element parent du menu
+        $('ul').on('click', '.navigation__menu-item--parent', goDeeper);
+        //Si on clique sur l'element Back (retour au menu précédent)
+        $('ul').on('click', '.back', goUpper);
+        //Si on clique sur l'élément qui fait apparaitre le menu
+        $('.toogle-nav__menu').on('click', function(){$('.mobile').toggleClass('hidden');});
+
+        /* Cloner les différentes éléments*/
+
+        //Créer un element qui serven de container pour tous les clones
+          $('nav.navigation').after('<div class="navigation mobile clone-area hidden"></div>');
+        //Clone Main Parent Menu
+         $('.navigation .navigation__menu').clone(true).find('.navigation__menu--child').remove().end().appendTo('.clone-area');
+         //Clone all children menu
+         $(' .navigation__menu > li  .navigation__menu--child').prepend("<li class='back'><a class='back__link'>Back to  </a></li>").clone(true).addClass('hidden').find('.navigation__menu--child').remove().end().appendTo('.clone-area');
+
+
+         /*Effacher le menu principale */
+         $('nav.navigation').remove();
+    }
+
+
+    else if ( $(window).width() < 1020){
+      $('.navigation__menu--child').hide();
+
+      $('.navigation__menu-link--open').on('click', slideIt);
+
+      $('.toogle-nav__menu').on('click', function(){
+        $('.navigation').toggleClass('hidden');
+      });
+    }
+
+    else{
+
+    }
+
+    function slideIt(){
+      $(this).next('ul').slideToggle();
+    }
+
+
+    function goUpper(){
+        //récuperer la valeur du data-parent-menu courant
+        var myDataParentValue = $(this).closest('ul').attr("data-parent-menu");
+
+        //Rewrite the back text
+        var back = $(this).closest('ul').prev().attr("data-back-menu");
+
+        if (back != undefined){
+            $('.back a').text('retour à ' + back);
+        }
+
+        //Cacher le menu courant
+        $(this).parent('ul').removeClass('show').addClass('hidden');
+
+        //Faire apparaitre le menu qui contient l'item avec  l'id = l'attribut data-parent-menu
+        $('li#' + myDataParentValue).parent('ul').removeClass('hidden').addClass('show');
+      }
+
+
+    function goDeeper(){
+        // recuperer un attribut important pour pouvoir lié l'element à son menu
+        var myIdValue = $(this).attr("id");
+
+        //recupere le dataparent Courant et l'ajouter à Back to
+        var back = $(this).closest('ul').attr("data-parent-menu");
+        $('.back a').text('Retour à ' + back);
+
+        //Lorsque je clique sur un element, je fais disparaitre le menu parent (ul).
+        $(this).parent('ul').removeClass('show').addClass('hidden');
+
+        //Je fais apparaitre le menu child contenant le bon data-parent-menu en m'assurant de cacher tous les autres menu
+        $('.navigation__menu--child[data-parent-menu='+ myIdValue +']').removeClass('hidden').addClass('show');
+      }
+
+         });
+
+  </script>
+
+
+
+  </body>
+</html>
